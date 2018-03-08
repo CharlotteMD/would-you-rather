@@ -27,7 +27,7 @@ class Register extends React.Component {
     e.preventDefault();
 
     Axios
-      .post('/register', this.state.user)
+      .post('/api/register', this.state.user)
       .then(res => {
         console.log('the response from the api', res);
         Auth.setToken(res.data.token);
