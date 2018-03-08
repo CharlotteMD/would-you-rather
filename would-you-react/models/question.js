@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const answerSchema = new mongoose.Schema({
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
-  content: {type: String, required: true}
+  choice: {type: String, required: true},
+  comment: {type: String}
 }, {
   timestamps: true
 });
