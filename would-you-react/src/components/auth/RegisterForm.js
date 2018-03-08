@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-const UserForm = ({ handleUserChange, handleSubmit, user }) => {
+const RegisterForm = ({ handleUserChange, handleSubmit, user }) => {
   return (
     <div className="container">
       {user && <form onSubmit={handleSubmit}>
@@ -52,4 +51,4 @@ const UserForm = ({ handleUserChange, handleSubmit, user }) => {
   );
 };
 
-export default UserForm;
+export default RegisterForm;

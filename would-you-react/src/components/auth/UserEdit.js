@@ -2,7 +2,7 @@ import React from 'react';
 import Axios from 'axios';
 
 import Auth from '../../lib/Auth';
-import UserForm from './UserForm';
+import RegisterForm from './RegisterForm';
 
 
 class UsersEdit extends React.Component {
@@ -39,7 +39,7 @@ class UsersEdit extends React.Component {
     return (
       <div>
         <h1>Edit your profile</h1>
-        <UserForm
+        <RegisterForm
           history={this.props.history}
           handleSubmit={this.handleSubmit}
           handleUserChange={this.handleUserChange}

@@ -23,17 +23,6 @@ userSchema
     this._passwordConfirmation = passwordConfirmation;
   });
 
-userSchema.virtual('hotels'/* this is the name of the field that we are creating */, {
-  ref: 'Hotel', // The model to use, conditional on the doc
-  localField: '_id', // Find people or organizations where `localField`
-  foreignField: 'admin' // is equal to `foreignField
-});
-
-userSchema.virtual('bids'/* this is the name of the field that we are creating */, {
-  ref: 'Auction', // The model to use, conditional on the doc
-  localField: '_id', // Find people or organizations where `localField`
-  foreignField: 'bids.createdBy' // is equal to `foreignField`
-});
 
 userSchema.pre('validate', function checkPassword(next) {
   if(!this._passwordConfirmation || this._passwordConfirmation !== this.password) {

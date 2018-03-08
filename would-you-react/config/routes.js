@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-const users  = require('../controllers/user');
-const questions  = require('../controllers/question');
+const users  = require('../controllers/users');
+const questions  = require('../controllers/questions');
 // const answers  = require('../controllers/question');
 
 const auth  = require('../controllers/auth');
@@ -37,20 +37,3 @@ router.route('/questions/:questionId')
 router.all('/*', (req, res) => res.notFound());
 
 module.exports = router;
-
-
-
-
-
-router.route('/auctions')
-  .get(auctions.index);
-
-router.route('/auctions/new/:hotelId')
-  .post(secureRoute, auctions.create);
-
-router.route('/auctions/:id')
-  .get(auctions.show)
-  .delete(secureRoute, auctions.delete);
-
-router.route('/auctions/:id/bids')
-  .post(secureRoute, auctions.addBid);

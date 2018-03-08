@@ -1,7 +1,8 @@
 import React from 'react';
 import Axios from 'axios';
 
-import UserForm from './UserForm';
+import RegisterForm from './RegisterForm';
+
 import Auth from '../../lib/Auth';
 
 class Register extends React.Component {
@@ -25,27 +26,26 @@ class Register extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-      Axios
-        .post('/api/register', this.state.user)
-        .then(res => {
-          console.log('the response from the api', res);
-          Auth.setToken(res.data.token);
-          this.props.history.push('/');
-        })
-        .catch(err => console.log(err));
-    }
-
+    Axios
+      .post('/register', this.state.user)
+      .then(res => {
+        console.log('the response from the api', res);
+        Auth.setToken(res.data.token);
+        this.props.history.push('/');
+      })
+      .catch(err => console.log(err));
   }
+
+
 
   render() {
     return (
       <div>
         <h1>Register</h1>
-        <UserForm
+        <RegisterForm
           user={this.state.user}
           handleUserChange={this.handleUserChange}
           handleSubmit={this.handleSubmit}
-          showHotelForm={this.state.showHotelForm}
         />
       </div>
     );

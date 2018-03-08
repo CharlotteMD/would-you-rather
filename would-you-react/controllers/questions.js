@@ -53,6 +53,5 @@ function questionsDelete(req, res, next) {
 module.exports = {
   create: questionsCreate,
   show: questionsShow,
-  update: questionsUpdate,
   delete: questionsDelete
 };
