@@ -8,6 +8,7 @@ import Navbar from './components/utility/Navbar';
 import Footer from './components/utility/Footer';
 
 import AuthRoutes from './components/auth/AuthRoutes';
+import QuestionRoutes from './components/questions/QuestionRoutes';
 
 import UserEdit from './components/auth/UserEdit';
 
@@ -21,6 +22,8 @@ class App extends React.Component {
           <h1>Would You Rather?</h1>
 
           <AuthRoutes />
+          <QuestionRoutes />
+
 
           <Route exact path="/users/:id/edit" component={UserEdit}/>
           {/* <Route exact path="/users/:id" component={UserProfile}/> */}

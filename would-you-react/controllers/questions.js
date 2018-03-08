@@ -1,5 +1,13 @@
 const Question = require('../models/question');
 
+function questionsIndex(req, res, next) {
+  Question
+    .find()
+    // .populate('hotel')
+    .exec()
+    .then(questions => res.json(questions))
+    .catch(next);
+}
 
 function questionsCreate(req, res, next) {
   req.body.addedBy = req.currentUser;
@@ -51,6 +59,7 @@ function questionsDelete(req, res, next) {
 
 
 module.exports = {
+  index: questionsIndex,
   create: questionsCreate,
   show: questionsShow,
   delete: questionsDelete

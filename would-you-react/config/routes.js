@@ -21,6 +21,7 @@ router.route('/users/:id')
 
 // INDEX questions
 router.route('/questions')
+  .get(questions.index)
   .post(secureRoute, questions.create);
 
 // SHOW individual questions, delete them from that page (cant edit questions)
@@ -29,7 +30,7 @@ router.route('/questions/:questionId')
   // .put(secureRoute, questions.update)
   .delete(secureRoute, questions.delete);
 
-// router.route('/questions/:questionId/answer/:answerId')
+// router.route('/answers/:answerId')
 //   .post(secureRoute, answers.create)
 //   .put(secureRoute, answers.update)
 //   .delete(secureRoute, answers.delete);
