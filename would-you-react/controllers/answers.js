@@ -22,6 +22,7 @@ function answersShow(req, res, next) {
   Answer
     .findById(req.params.id)
     .populate('question')
+    .populate('user')
     .exec()
     .then((answer) => {
       if(!answer) return res.notFound();

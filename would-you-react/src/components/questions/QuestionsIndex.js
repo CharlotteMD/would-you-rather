@@ -44,7 +44,7 @@ class QuestionsIndex extends Component {
                       </div>
 
                       <div className="showlink">
-                        <Link to={`/answers/${question.id}`}>
+                        <Link to={`/questions/${question.id}`}>
                           <button>View Answers</button>
                         </Link>
                       </div>

@@ -25,7 +25,7 @@ router.route('/questions')
   .post(secureRoute, questions.create);
 
 // SHOW individual questions, delete them from that page (cant edit questions)
-router.route('/questions/:questionId')
+router.route('/questions/:id')
   .get(questions.show)
   // .put(secureRoute, questions.update)
   .delete(secureRoute, questions.delete);

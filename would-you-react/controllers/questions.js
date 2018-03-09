@@ -21,6 +21,7 @@ function questionsCreate(req, res, next) {
 function questionsShow(req, res, next) {
   Question
     .findById(req.params.id)
+    .populate('user')
     .exec()
     .then((question) => {
       if(!question) return res.notFound();
