@@ -14,10 +14,16 @@ class QuestionsShow extends React.Component {
       addedBy: '',
       answers: [{
         createdBy: '',
-        choice: '',
+        choice: {
+          A: '',
+          B: ''
+        },
         comment: ''
       }]
-    }
+    },
+    choosesA: null,
+    choosesB: null,
+    totalAnswers: null
   }
 
 
@@ -39,6 +45,43 @@ class QuestionsShow extends React.Component {
       .catch(err => console.log(err));
   }
 
+  pickA = () => {
+    return
+      this.setState.choosesA = choosesA ++;
+      console.log(this.state.choosesA);
+  }
+
+  pickB = () => {
+    return this.setState.choosesB ++;
+  }
+
+  totalAnswers = () => {
+    return this.setState.totalAnswers = (this.state.choosesA + this.state.choosesB);
+  }
+
+  percent = () => {
+    return (this.state.choosesA / this.state.totalAnswers) * 100;
+  }
+
+  // every time a choice is made add one to choice
+  // loop over choice, add one for every time A is chosen
+  // divide the number of times A is chosen by the number of choices made and times by 100 to make a percent
+  // css fills glass with percent of choice A is chosen
+
+  // aWins () {
+  //
+  //   return this.state.question.answers.choice === A ? this.setState.choosesA ++ : false;
+  //
+  //
+  //   // if (choices === A) {
+  //   //   choosesA ++;
+  //   //   choices ++;
+  //   // } else {
+  //   //   choices ++;
+  //   // }
+  // }
+
+
   render() {
     return(
 
@@ -52,17 +95,49 @@ class QuestionsShow extends React.Component {
             return <div className="col-md-4 col-sm-6 col-xs-12" key={i}>
               <div className="card">
 
-                <div className="answer">
-
-                  {/* add all Bs and all As and show in graph/poll */}
-
-                </div>
-
 
 
               </div>
+
+
+
             </div>;
           })}
+
+          {/* <div className="poll">
+
+            <div className="middle">
+
+              <div className="so-far"> */}
+
+                <div id="glass">
+                  <div id="progress">
+                  </div>
+                </div>
+
+                {/* <h3>Total raised so far:</h3><div id ="raised"></div>
+              </div>
+
+              <div className="target">
+                <h2>Target:</h2><h2 id="target">£100</h2>
+              </div>
+
+            </div>
+
+            <h3>Additional Funds Needed:</h3><h2 id="additionalFunds">Im still to raise!</h2>
+
+          </div>
+
+          <div className="buttons">
+            <button className="one">£1</button>
+            <button className="five">£5</button>
+            <button className="ten">£10</button>
+          </div> */}
+
+          {/* add all Bs and all As and show in graph/poll */}
+
+          <button onSubmit="pickA">A</button>
+          <button onSubmit="pickB">B</button>
 
         </div>
 
