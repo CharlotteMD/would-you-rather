@@ -1,6 +1,6 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './scss/style.scss';
 
@@ -19,7 +19,7 @@ class App extends React.Component {
       <Router>
         <div>
           <Navbar />
-          <h1>Would You Rather?</h1>
+          <Link to="/"><h1>Would You Rather?</h1></Link>
 
           <AuthRoutes />
           <QuestionRoutes />

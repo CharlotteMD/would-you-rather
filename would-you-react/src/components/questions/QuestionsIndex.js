@@ -3,17 +3,21 @@ import Axios from 'axios';
 import { Link } from 'react-router-dom';
 // import moment from 'moment';
 
+import Auth from '../../lib/Auth';
+
+
+
 class QuestionsIndex extends Component {
       state = {
         questions: [{
           ratherA: '',
           ratherB: '',
-          addedBy: '',
-          answers: [{
-            createdBy: '',
-            choice: '',
-            comment: ''
-          }]
+          addedBy: ''
+          // answers: [{
+          //   createdBy: '',
+          //   choice: '',
+          //   comment: ''
+          // }]
         }]
       }
 
@@ -21,9 +25,7 @@ class QuestionsIndex extends Component {
       componentDidMount() {
         Axios
           .get('/api/questions')
-          .then(res => {
-            this.setState({ questions: res.data }, () => console.log(this.state.question));
-          })
+          .then(res => this.setState({ questions: res.data }))
           .catch(err => console.log(err));
       }
 
@@ -31,30 +33,33 @@ class QuestionsIndex extends Component {
         return(
           <div className="question-index">
             <div className="container">
-              <h1>View Questions</h1>
+              <h1>Very Important Questions</h1>
 
-              <div className="row">
+              {Auth.isAuthenticated() && <Link to="questions/new"><h2>Add a new question</h2></Link>}
 
-                { this.state.questions.map((question, i) => {
-                  return <div className="col-md-4 col-sm-6 col-xs-12" key={i}>
-                    <div className="card">
+              <div>
+                <div className="row">
 
-                      <div className="question">
-                        <h2>{`Would you rather ${question.ratherA} or ${question.ratherB}?`}</h2>
+                  { this.state.questions.map((question, i) => {
+                    return <div className="col-md-4 col-sm-6 col-xs-12" key={i}>
+                      <div className="card">
+
+                        <div className="question">
+                          <h2>{`Would you rather ${question.ratherA} or ${question.ratherB}?`}</h2>
+                        </div>
+
+                        <div className="showlink">
+                          <Link to={`/questions/${question.id}`}>
+                            <button>View Answers</button>
+                          </Link>
+                        </div>
+
+
                       </div>
+                    </div>;
+                  })}
 
-                      <div className="showlink">
-                        <Link to={`/questions/${question.id}`}>
-                          <button>View Answers</button>
-                        </Link>
-                      </div>
-
-
-                    </div>
-                  </div>;
-                })}
-
-
+                </div>
               </div>
             </div>
           </div>
