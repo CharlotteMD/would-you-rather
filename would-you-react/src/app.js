@@ -18,8 +18,9 @@ class App extends React.Component {
     return (
       <Router>
         <div>
+
           <Navbar />
-          <Link to="/"><h1>Would You Rather?</h1></Link>
+          <Link to="/"><div className="logo"></div></Link>
 
           <AuthRoutes />
           <QuestionRoutes />

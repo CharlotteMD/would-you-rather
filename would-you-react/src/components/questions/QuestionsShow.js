@@ -137,6 +137,7 @@ class QuestionsShow extends React.Component {
           {/* add all Bs and all As and show in graph/poll */}
 
           <button onSubmit="pickA">A</button>
+          {/* need to set answer on button */}
           <button onSubmit="pickB">B</button>
 
         </div>
