@@ -1,0 +1,34 @@
+// @import "variables";
+
+
+.navbar, .footer {
+  font-family: $header;
+  font-size: 24px;
+  background-color: navy;
+  padding: 20px;
+  margin: 10px;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    li {
+      button {
+        font-family: $text;
+        font-size: 20px;
+        color: grey;
+        background-color: navy;
+        border: navy solid 1px;
+
+
+        a {
+          color: grey;
+          text-decoration: none;
+        }
+
+      }
+    }
+  }
+}
