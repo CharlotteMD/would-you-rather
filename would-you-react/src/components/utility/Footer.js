@@ -5,20 +5,14 @@ const Footer = () => {
   return(
     <div className="footer">
 
-      <h2>Coded by Charlotte 👩🏻‍💻</h2>
-      <ul>
-        <li>
-          <button><a href="https://github.com/CharlotteMD" target="_blank" rel="noopener noreferrer">Github</a></button>
-        </li>
+      <h6>Coded by Charlotte 👩🏻‍💻</h6>
 
-        <li>
-          <button><a href="https://www.linkedin.com/in/charlottemdavies/" target="_blank" rel="noopener noreferrer">LinkedIn</a></button>
-        </li>
+      <button><a href="https://github.com/CharlotteMD" target="_blank" rel="noopener noreferrer">Github</a></button>
 
-        <li>
-          <button><a href="https://www.charlottemdavies.co.uk/" target="_blank" rel="noopener noreferrer">Portfolio</a></button>
-        </li>
-      </ul>
+      <button><a href="https://www.linkedin.com/in/charlottemdavies/" target="_blank" rel="noopener noreferrer">LinkedIn</a></button>
+
+      <button><a href="https://www.charlottemdavies.co.uk/" target="_blank" rel="noopener noreferrer">Portfolio</a></button>
+
 
     </div>
 

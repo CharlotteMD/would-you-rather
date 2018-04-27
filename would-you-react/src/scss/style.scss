@@ -1,9 +1,14 @@
 @import "variables";
 @import "poll";
-// @import "header";
+@import "header";
 @import "navbar";
+@import "forms";
 
 body {
   margin: 0 auto;
-  background-color: lightblue;
+}
+
+h1 {
+  font-family: "Righteous", cursive;
+  text-decoration: none;
 }

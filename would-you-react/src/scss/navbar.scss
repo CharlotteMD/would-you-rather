@@ -1,34 +1,31 @@
-// @import "variables";
-
-
 .navbar, .footer {
   font-family: $header;
   font-size: 24px;
-  background-color: navy;
+  background-color: $title-bg;
   padding: 20px;
   margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
-  ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  button {
+    font-family: $text;
+    font-size: 20px;
+    color: $title;
+    background-color: $title-bg;
+    border: $title-bg solid 1px;
 
-    li {
-      button {
-        font-family: $text;
-        font-size: 20px;
-        color: grey;
-        background-color: navy;
-        border: navy solid 1px;
-
-
-        a {
-          color: grey;
-          text-decoration: none;
-        }
-
-      }
+    a {
+      color: $title;
+      text-decoration: none;
+      font-size: 16px;
     }
   }
+}
+
+h6 {
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  margin: 10px;
 }

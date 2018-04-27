@@ -13,34 +13,28 @@ const Navbar = ({ history }) => {
   return(
     <nav >
       <div className="navbar">
-        <ul>
 
-          { !Auth.isAuthenticated() &&
-          <li className="nav-item">
+        { !Auth.isAuthenticated() &&
             <a className="nav-link" href="/register"><button>Register</button></a>
-          </li>}
+        }
 
-          { !Auth.isAuthenticated() &&
-          <li className="nav-item">
+        { !Auth.isAuthenticated() &&
             <a className="nav-link" href="/login"><button>Login</button></a>
-          </li>}
+        }
 
-          {Auth.isAuthenticated() &&
-          <li className="nav-item">
+        {Auth.isAuthenticated() &&
             <a className="nav-link" href={`/users/${Auth.getPayload().userId}`}><button>Your Profile</button></a>
-          </li>}
+        }
 
-          {Auth.isAuthenticated() &&
-          <li className="nav-item">
+        {Auth.isAuthenticated() &&
             <a href="/" className="nav-link" onClick={logout}><button>Logout</button></a>
-          </li>}
-
-          <li className="nav-item">
-            <a className="nav-link" href="/questions"><button>View Questions</button></a>
-          </li>
+        }
 
 
-        </ul>
+        <a className="nav-link" href="/questions"><button>View Questions</button></a>
+
+
+
 
       </div>
 

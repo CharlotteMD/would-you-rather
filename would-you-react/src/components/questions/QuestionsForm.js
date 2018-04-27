@@ -9,7 +9,7 @@ const QuestionsForm = ({ handleQuestionChange, handleSubmit, question, errors })
       <form onSubmit={handleSubmit}>
 
         <div className="form-group">
-          <label htmlFor="reservePrice">Would you rather...</label>
+          <label>Would you rather...</label>
           <input
             type="string"
             name="ratherA"
@@ -22,7 +22,7 @@ const QuestionsForm = ({ handleQuestionChange, handleSubmit, question, errors })
         { errors.ratherA && <p>{errors.ratherA}</p>}
 
         <div className="form-group">
-          <label htmlFor="reservePrice">...or...?</label>
+          <label>...or...?</label>
           <input
             type="string"
             name="ratherB"
@@ -34,7 +34,7 @@ const QuestionsForm = ({ handleQuestionChange, handleSubmit, question, errors })
         </div>
         { errors.ratherB && <p>{errors.ratherB}</p>}
 
-        <button disabled={formIsInvalid} className="main-button">Create</button>
+        <button className="main-button">Create</button>
       </form>
     </div>
   );

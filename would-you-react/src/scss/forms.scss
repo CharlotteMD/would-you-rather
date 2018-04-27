@@ -1,0 +1,17 @@
+.form-group {
+  input {
+    font-family: $text;
+    font-size: 18px;
+    margin: 5px;
+  }
+}
+
+.main-button {
+  padding: 10px;
+  margin: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: $accent;
+  color: $font;
+  border-radius: 20%;
+}

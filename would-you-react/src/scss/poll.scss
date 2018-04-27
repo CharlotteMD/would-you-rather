@@ -1,7 +1,7 @@
 body {
 	font-family: sans-serif;
   margin-top: 100px;
-  color: darkgrey;
+  color: $title;
   display: flex;
   text-align: center;
 
@@ -13,13 +13,13 @@ body {
 }
 
 .main-box {
-  border: solid navy 3px;
+  border: solid $title-bg 3px;
   max-width: 600px;
   margin: 0 auto;
 }
 
 h1 {
-  color: navy;
+  color: $title-bg;
   text-decoration: underline;
   padding: 15px;
 }
@@ -41,7 +41,7 @@ h1 {
 
 .target {
   max-width: 25%;
-  border: solid navy 3px;
+  border: solid $title-bg 3px;
 }
 
 h2 {
@@ -76,12 +76,12 @@ h2 {
 }
 
 .one, .five, .ten {
-  border: solid navy 3px;
+  border: solid $title-bg 3px;
   text-align: center;
   padding: 10px;
   margin: 5px;
   border-radius: 10%;
-  background-color: navy;
+  background-color: $title-bg;
   color: white;
 }
 
