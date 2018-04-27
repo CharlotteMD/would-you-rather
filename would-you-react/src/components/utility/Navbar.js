@@ -14,6 +14,7 @@ const Navbar = ({ history }) => {
     <nav >
       <div className="navbar">
 
+
         { !Auth.isAuthenticated() &&
             <a className="nav-link" href="/register"><button>Register</button></a>
         }

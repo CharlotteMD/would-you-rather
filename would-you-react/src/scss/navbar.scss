@@ -1,6 +1,5 @@
 .navbar, .footer {
   font-family: $header;
-  font-size: 24px;
   background-color: $title-bg;
   padding: 20px;
   margin: 10px;
@@ -10,7 +9,7 @@
 
   button {
     font-family: $text;
-    font-size: 20px;
+    font-size: 15px;
     color: $title;
     background-color: $title-bg;
     border: $title-bg solid 1px;
@@ -23,9 +22,19 @@
   }
 }
 
+.navbar {
+  button {
+    background: $accent;
+    color: $font;
+    border-radius: 20%;
+    padding: 7px;
+  }
+}
+
 h6 {
   font-size: 18px;
   display: block;
   width: 100%;
   margin: 10px;
+  color: $font;
 }
