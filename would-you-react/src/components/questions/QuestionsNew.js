@@ -24,7 +24,7 @@ class QuestionsNew extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log('hitting');
     Axios
       .post('/api/questions', this.state.question, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`} })
       .then(this.props.history.push('/questions'))
