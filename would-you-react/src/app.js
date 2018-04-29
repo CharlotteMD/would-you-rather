@@ -20,7 +20,7 @@ class App extends React.Component {
         <div>
 
           <Navbar />
-          <Link to="/"><div className="logo"><h1>Would You Rather?</h1></div></Link>
+          <Link to="/"><div className="logo"><h1>Important Questions of the Universe</h1></div></Link>
 
           <AuthRoutes />
           <QuestionRoutes />

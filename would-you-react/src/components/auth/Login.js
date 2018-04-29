@@ -22,14 +22,19 @@ class userLogin extends React.Component {
   }
 
   handleSubmit = (e) => {
+    console.log('hitting');
     e.preventDefault();
     Axios
-      .post('/api/login', this.state.user)
+      .post('/api/login', this.state.user);
+    console.log('here')
       .then(res => {
         Auth.setToken(res.data.token);
-        this.props.history.push('/');
+        this.props.history.push('/questions');
       })
-      .catch(err => this.setState({ errors: err.response.data.errors }));
+      .catch( err => {
+        console.log(err);
+      });
+    // .catch(err => this.setState({ errors: err.response.data.errors }));
   }
 
   render() {

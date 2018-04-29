@@ -1,7 +1,7 @@
 {
-  "name": "wdi-project",
+  "name": "would-you-rather",
   "version": "1.0.0",
-  "description": "A React and Webpack setup for WDI",
+  "description": "My first side project, post GA",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
