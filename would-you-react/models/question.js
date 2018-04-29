@@ -45,7 +45,7 @@ answerSchema.methods.belongsTo = function answerBelongsTo(user) {
 };
 
 questionSchema.virtual('user'/* this is the name of the field that we are creating */, {
-  ref: 'User', // The model to use, conditional on the doc
+  ref: 'user', // The model to use, conditional on the doc
   localField: 'addedBy', // Find people or organizations where `localField`
   foreignField: 'id' // is equal to `foreignField
 });

@@ -12,7 +12,10 @@ class QuestionsIndex extends Component {
         questions: [{
           ratherA: '',
           ratherB: '',
-          addedBy: ''
+          addedBy: {
+            name: '',
+            id: ''
+          }
           // answers: [{
           //   createdBy: '',
           //   choice: '',
@@ -46,6 +49,7 @@ class QuestionsIndex extends Component {
 
                         <div className="question">
                           <h2>{`Would you rather ${question.ratherA} or ${question.ratherB}?`}</h2>
+                          <h3>{`Added by: ${question.addedBy.name}`}</h3>
                         </div>
 
                         <div className="showlink">
