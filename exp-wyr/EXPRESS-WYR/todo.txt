@@ -1,0 +1,3 @@
+connect to mongoDB - locally
+set up CRUD options
+connect to react front end 
