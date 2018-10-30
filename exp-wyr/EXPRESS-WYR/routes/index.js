@@ -9,10 +9,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/api/questions', db.getAllQuestions);
-// router.get('/api/questions/:id', db.getAQuestion);
-// router.post('/api/questions', db.addAQuestion);
-// router.put('/api/questions/:id', db.editAQuestion);
-// router.delete('/api/questions/:id', db.deleteAQuestion);
+router.get('/api/questions/:id', db.getAQuestion);
+router.post('/api/questions', db.addAQuestion);
+router.put('/api/questions/:id', db.editAQuestion);
+router.delete('/api/questions/:id', db.deleteAQuestion);
 
 
 module.exports = router;
