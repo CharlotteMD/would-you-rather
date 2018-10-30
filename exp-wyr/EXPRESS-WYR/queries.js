@@ -9,12 +9,26 @@ var pgp = require('pg-promise')(options);
 var connectionString = 'postgres://localhost:5432/wouldyou';
 var db = pgp(connectionString);
 
-// query functions
+function getAllQuestions(req, res, next) {
+    db.any('select * from questions')
+        .then(function (data) {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Retrieved ALL questions'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
 
 module.exports = {
-    getAllQuestions: getAllQuestions,
-    getAQuestion: getAQuestion,
-    addAQuestion: addAQuestion,
-    editAQuestion: editAQuestion,
-    deleteAQuestion: deleteAQuestion
+    getAllQuestions: getAllQuestions
+    // getAQuestion: getAQuestion,
+    // addAQuestion: addAQuestion,
+    // editAQuestion: editAQuestion,
+    // deleteAQuestion: deleteAQuestion
 };
+

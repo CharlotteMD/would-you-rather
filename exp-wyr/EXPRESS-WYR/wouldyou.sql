@@ -11,3 +11,6 @@ CREATE TABLE questions (
 
 INSERT INTO questions (ratherA, ratherB)
     VALUES ('be rich', 'be popular');
+
+INSERT INTO questions (ratherA, ratherB)
+    VALUES ('be happy', 'be rich');
