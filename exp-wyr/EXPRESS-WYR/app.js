@@ -4,7 +4,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 var createError = require('http-errors');
 var express = require('express');
-var mongoose = require('mongoose');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -13,13 +12,6 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
-// var mongoose = require('mongoose');
-// var mongoDB = `mongodb://${process.env.user}:${process.env.secret}@ds145083.mlab.com:45083/would-you-rather`;
-// mongoose.connect(mongoDB);
-// mongoose.Promise = global.Promise;
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -50,15 +42,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-//Set up default mongoose connection
-var mongoDB = 'mongodb://127.0.0.1/my_database';
-mongoose.connect(mongoDB);
-// Get Mongoose to use the global promise library
-mongoose.Promise = global.Promise;
-//Get the default connection
-var db = mongoose.connection;
-
-//Bind connection to error event (to get notification of connection errors)
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 module.exports = app;
