@@ -14,9 +14,15 @@ CREATE TABLE questions (
     ID SERIAL PRIMARY KEY,
     ratherA VARCHAR,
     ratherB VARCHAR,
-    createdBy 
+    createdBy VARCHAR
 );
 
+CREATE TABLE answers (
+    ID SERIAL PRIMARY KEY,
+    questionId VARCHAR,
+    choice BOOLEAN,
+    addedBy VARCHAR
+);
 
 
 INSERT INTO users (name, email, password)
@@ -25,9 +31,14 @@ INSERT INTO users (name, email, password)
 INSERT INTO users (name, email, password)
     VALUES ('Jav', 'jav@gmail.com', 'password');
 
-
 INSERT INTO questions (ratherA, ratherB)
     VALUES ('be rich', 'be popular');
 
 INSERT INTO questions (ratherA, ratherB)
     VALUES ('be happy', 'be rich');
+
+INSERT INTO answers (questionId, choice, addedBy)
+    VALUES ('1', 'true', '2');
+
+INSERT INTO answers (questionId, choice, addedBy)
+    VALUES ('2', 'false', '4');

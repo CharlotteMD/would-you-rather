@@ -167,6 +167,85 @@ function deleteAUser(req, res, next) {
         });
 }
 
+function getAllAnswers(req, res, next) {
+    db.any('select * from answers')
+        .then(function (data) {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Retrieved ALL answers'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
+
+function getAnAnswer(req, res, next) {
+    var answerID = parseInt(req.params.id);
+    db.one('select * from answers where id = $1', answerID)
+        .then(function (data) {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    data: data,
+                    message: 'Retrieved ONE answer'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
+
+function addAnAnswer(req, res, next) {
+    db.none('insert into answers(questionId, choice, addedBy)' +
+        'values(${questionId}, ${choice}, ${addedBy})',
+        req.body)
+        .then(function () {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    message: 'Inserted one Answer'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
+
+function editAnAnswer(req, res, next) {
+    db.none('update Answers set questionId=$1, choice=$2, addedBy=$3 where id=$4',
+        [req.body.questionId, req.body.choice, req.body.addedBy, parseInt(req.params.id)])
+        .then(function () {
+            res.status(200)
+                .json({
+                    status: 'success',
+                    message: 'Updated Answer'
+                });
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
+
+function deleteAnAnswer(req, res, next) {
+    var answerId = parseInt(req.params.id);
+    db.result('delete from Answers where id = $1', answerId)
+        .then(function (result) {
+            /* jshint ignore:start */
+            res.status(200)
+                .json({
+                    status: 'success',
+                    message: `Removed ${result.rowCount} answers`
+                });
+            /* jshint ignore:end */
+        })
+        .catch(function (err) {
+            return next(err);
+        });
+}
+
 module.exports = {
     getAllQuestions: getAllQuestions,
     getAQuestion: getAQuestion,
@@ -177,6 +256,11 @@ module.exports = {
     getAUser: getAUser,
     addAUser: addAUser,
     editAUser: editAUser,
-    deleteAUser: deleteAUser
+    deleteAUser: deleteAUser,
+    getAllAnswers: getAllAnswers,
+    getAnAnswer: getAnAnswer,
+    addAnAnswer: addAnAnswer,
+    editAnAnswer: editAnAnswer,
+    deleteAnAnswer: deleteAnAnswer
 };
 
