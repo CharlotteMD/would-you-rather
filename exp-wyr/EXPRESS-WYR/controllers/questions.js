@@ -41,6 +41,7 @@ function getAQuestion(req, res, next) {
 }
 
 function addAQuestion(req, res, next) {
+    // req.body.createdBy = req.currentUser;
     db.none('insert into questions(ratherA, ratherB)' +
         'values(${ratherA}, ${ratherB})',
         req.body)
@@ -120,8 +121,8 @@ function getAUser(req, res, next) {
 }
 
 function addAUser(req, res, next) {
-    db.none('insert into users(name, email, password)' +
-        'values(${name}, ${email}, ${password})',
+    db.none('insert into users(username, email, password)' +
+        'values(${username}, ${email}, ${password})',
         req.body)
         .then(function () {
             res.status(200)
@@ -136,8 +137,8 @@ function addAUser(req, res, next) {
 }
 
 function editAUser(req, res, next) {
-    db.none('update Users set name=$1, email=$2, password=$3 where id=$4',
-        [req.body.name, req.body.email, req.body.password, parseInt(req.params.id)])
+    db.none('update Users set username=$1, email=$2, password=$3 where id=$4',
+        [req.body.username, req.body.email, req.body.password, parseInt(req.params.id)])
         .then(function () {
             res.status(200)
                 .json({
